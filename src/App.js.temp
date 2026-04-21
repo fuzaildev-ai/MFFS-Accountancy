@@ -1,0 +1,23 @@
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import { supabase } from './supabaseClient';
+
+// Layout
+import MainLayout from './components/MainLayout';
+
+// Main Pages
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import Services from './pages/Services';
+import Contact from './pages/Contact';
+import Pricing from './pages/Pricing';
+import News from './pages/News';
+import Blog from './pages/Blog';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminLogin from './pages/admin/AdminLogin';
+
+// Core Services
+import LimitedCompany from './pages/services/LimitedCompany';
+import SoleTrader from './pages/services/SoleTrader';
+// ... other imports remain the same in the real file, I'll use multi_replace for accuracy ...
