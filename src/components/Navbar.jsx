@@ -109,7 +109,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center relative">
         {/* Brand Logo */}
         <Link to="/" className="flex items-center gap-3 py-4 xl:py-6">
           <div className="w-8 h-8 xl:w-10 xl:h-10 bg-brand-primary rounded flex items-center justify-center font-black text-brand-accent text-lg xl:text-xl">M</div>
@@ -120,7 +120,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation - Active from 1024px (lg) with optimized spacing */}
-        <div className="hidden lg:flex items-center lg:gap-4 xl:gap-10">
+        <div className="hidden lg:flex items-center lg:gap-3 xl:gap-8">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/about">About Us</NavLink>
           <NavLink 
@@ -136,7 +136,7 @@ export default function Navbar() {
           
           <Link 
             to="/contact" 
-            className="lg:ml-2 xl:ml-6 px-6 xl:px-10 py-4 xl:py-5 bg-brand-primary text-brand-accent font-black text-[9px] xl:text-[10px] uppercase tracking-[0.1em] hover:bg-brand-accent hover:text-brand-primary transition-all duration-500 rounded-sm"
+            className="lg:ml-2 xl:ml-6 px-4 xl:px-10 py-3 xl:py-5 bg-brand-primary text-brand-accent font-black text-[9px] xl:text-[10px] uppercase tracking-[0.1em] hover:bg-brand-accent hover:text-brand-primary transition-all duration-500 rounded-sm whitespace-nowrap"
           >
             Get a Quote
           </Link>

@@ -83,7 +83,7 @@ export default function PageHeader({ title, subtitle, bgImage }) {
             <span>MFFS ADVISORY</span>
           </div>
 
-          <h1 className="header-title text-4xl md:text-6xl lg:text-8xl font-heading font-black text-white tracking-tighter leading-[0.85] uppercase mb-10">
+          <h1 className="header-title text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-heading font-black text-white tracking-tighter leading-[0.95] md:leading-[0.85] uppercase mb-10 break-words">
             {title}
           </h1>
           <p className="header-sub text-xl md:text-2xl text-white/70 max-w-2xl font-body leading-relaxed border-l-4 border-brand-accent pl-8">

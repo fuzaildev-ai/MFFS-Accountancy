@@ -26,7 +26,7 @@ export default function AboutUs() {
                     <div className="w-12 h-0.5 bg-brand-accent" />
                     <span className="text-[10px] font-black uppercase tracking-[0.4em] text-brand-primary/40">Our Professional Narrative</span>
                  </div>
-                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-brand-primary leading-[0.9] uppercase mb-8 lg:mb-10">Math, <br /> <span className="text-brand-accent italic">Meticulously</span> Squared.</h2>
+                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-brand-primary leading-[0.95] uppercase mb-8 lg:mb-10">Math, <br /> <span className="text-brand-accent italic">Meticulously</span> Squared.</h2>
                  <p className="text-slate-500 text-lg md:text-xl leading-relaxed mb-10 border-l-4 border-brand-accent pl-6 lg:pl-8 font-medium">
                     MFFS is not merely an accounting firm; we are capital engineers. Since our founding, we have specialized in unraveling the complexities of UK tax policy to deliver mathematical certainty for our clients.
                  </p>
@@ -50,8 +50,8 @@ export default function AboutUs() {
                     />
                     <div className="absolute inset-0 bg-brand-primary/10" />
                  </div>
-                 <div className="absolute -bottom-12 -right-12 bg-brand-accent p-12 rounded-[40px] shadow-2xl text-brand-primary max-w-xs hidden xl:block">
-                    <p className="text-xl font-black italic">"Accuracy is the only currency that matters in UK compliance."</p>
+                 <div className="absolute -bottom-6 md:-bottom-12 -right-6 md:-right-12 bg-brand-accent p-6 md:p-12 rounded-[20px] md:rounded-[40px] shadow-2xl text-brand-primary max-w-[200px] md:max-w-xs hidden sm:block">
+                    <p className="text-sm md:text-xl font-black italic">"Accuracy is the only currency that matters in UK compliance."</p>
                  </div>
               </div>
            </div>

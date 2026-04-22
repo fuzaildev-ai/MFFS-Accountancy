@@ -68,26 +68,26 @@ export default function Hero() {
           </div>
 
           <div className="mb-10">
-            <h1 className="hero-line text-6xl md:text-8xl font-black text-brand-primary leading-[0.95] tracking-tight uppercase">
+            <h1 className="hero-line text-4xl sm:text-6xl md:text-8xl font-black text-brand-primary leading-[0.95] tracking-tight uppercase">
               Financial
             </h1>
-            <h1 className="hero-line text-6xl md:text-8xl font-black text-brand-accent leading-[0.95] tracking-tight uppercase">
+            <h1 className="hero-line text-4xl sm:text-6xl md:text-8xl font-black text-brand-accent leading-[0.95] tracking-tight uppercase">
               Excellence
             </h1>
-            <h1 className="hero-line text-4xl md:text-6xl font-black text-brand-primary leading-[1.1] tracking-tight uppercase">
+            <h1 className="hero-line text-2xl sm:text-4xl md:text-6xl font-black text-brand-primary leading-[1.1] tracking-tight uppercase">
               Precision Scaled.
             </h1>
           </div>
 
-          <p className="hero-subtext text-xl text-slate-500 font-medium leading-relaxed max-w-xl mb-12 border-l-4 border-brand-accent pl-8">
+          <p className="hero-subtext text-lg md:text-xl text-slate-500 font-medium leading-relaxed max-w-xl mb-12 border-l-4 border-brand-accent pl-6 md:pl-8">
             Bespoke UK chartered accounting and strategic auditing designed for enterprises that demand mathematical certainty and absolute compliance.
           </p>
 
-          <div className="hero-cta flex flex-wrap gap-6">
-             <Button to="/contact" variant="primary" className="px-12 py-6 bg-brand-primary text-brand-accent hover:bg-brand-accent hover:text-brand-primary">
+          <div className="hero-cta flex flex-wrap gap-4 md:gap-6">
+             <Button to="/contact" variant="primary" className="px-8 md:px-12 py-4 md:py-6 bg-brand-primary text-brand-accent hover:bg-brand-accent hover:text-brand-primary">
                 Get Started
              </Button>
-             <Button to="/services" variant="outline" className="px-12 py-6 border-brand-primary/10 text-brand-primary hover:bg-brand-primary hover:text-white">
+             <Button to="/services" variant="outline" className="px-8 md:px-12 py-4 md:py-6 border-brand-primary/10 text-brand-primary hover:bg-brand-primary hover:text-white">
                 View Solutions
              </Button>
           </div>

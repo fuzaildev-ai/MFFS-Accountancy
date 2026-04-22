@@ -52,9 +52,9 @@ export default function VatReturns() {
                  <Button to="/contact" variant="primary">Audit My VAT</Button>
               </div>
               <div className="relative">
-                 <div className="bg-brand-primary p-20 rounded-[80px] shadow-2xl text-white relative z-10 overflow-hidden">
+                 <div className="bg-brand-primary p-8 md:p-20 rounded-[40px] md:rounded-[80px] shadow-2xl text-white relative z-10 overflow-hidden">
                     <div className="absolute bottom-0 right-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-[100px] -mr-32 -mb-32" />
-                    <h3 className="text-[130px] font-black text-brand-accent/10 absolute top-10 right-10 select-none">MTD</h3>
+                    <h3 className="text-[60px] md:text-[130px] font-black text-brand-accent/10 absolute top-5 md:top-10 right-5 md:right-10 select-none">MTD</h3>
                     <p className="text-xl font-black mb-8 italic italic text-brand-accent">HMRC Agent ID Required?</p>
                     <p className="text-white/60 mb-8 leading-relaxed">Let MFFS act as your authorized agent. We take full responsibility for your VAT submissions, ensuring you never miss a deadline or incur a penalty.</p>
                     <div className="space-y-4 text-xs font-black uppercase tracking-widest text-brand-accent border-t border-white/10 pt-8">
@@ -63,7 +63,7 @@ export default function VatReturns() {
                        <p>✓ Professional Liaison with HMRC</p>
                     </div>
                  </div>
-                 <div className="absolute inset-0 bg-brand-accent/20 rounded-[80px] -rotate-3 scale-105 -z-10" />
+                 <div className="absolute inset-0 bg-brand-accent/20 rounded-[40px] md:rounded-[80px] -rotate-3 scale-105 -z-10" />
               </div>
            </div>
         </div>

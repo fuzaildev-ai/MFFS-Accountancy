@@ -12,7 +12,7 @@ export default function LogoCloud() {
   ];
 
   const logos = auditFirms.map((firm, i) => (
-    <div key={i} className="flex-shrink-0 w-[140px] sm:w-[160px] md:w-[200px] lg:w-[250px] flex items-center justify-center px-2 sm:px-4 md:px-6 transition-all duration-500 hover:scale-110">
+    <div key={i} className="flex-shrink-0 w-[120px] sm:w-[160px] md:w-[200px] lg:w-[250px] flex items-center justify-center px-1 sm:px-4 md:px-6 transition-all duration-500 hover:scale-110">
        {firm.icon}
     </div>
   ));

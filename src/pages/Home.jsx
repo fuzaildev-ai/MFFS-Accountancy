@@ -175,7 +175,7 @@ export default function Home() {
            <div className="bg-brand-primary p-8 sm:p-12 md:p-32 rounded-[40px] md:rounded-[60px] text-center relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accent/5 rounded-full blur-[100px] -mr-48 -mt-48 transition-all duration-1000 group-hover:scale-150" />
               <div className="relative z-10">
-                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[100px] font-black text-white tracking-tighter mb-12 leading-[40px] md:leading-[0.8] uppercase">
+                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[100px] font-black text-white tracking-tighter mb-12 leading-[1] md:leading-[0.8] uppercase">
                     Ready to <br /> <span className="text-brand-accent italic">Scale</span> Safely?
                  </h2>
                  <p className="text-white/60 text-xl font-medium max-w-2xl mx-auto mb-16">Download our 'Tax Mitigation PDF' or book a senior diagnostic audit today.</p>

@@ -22,7 +22,7 @@ export default function Bookkeeping() {
         <div className="container-custom">
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
               <div className="order-2 lg:order-1">
-                 <div className="finkash-card bg-brand-primary p-12 md:p-16 rounded-[60px] text-white">
+                 <div className="finkash-card bg-brand-primary p-8 md:p-16 rounded-[40px] md:rounded-[60px] text-white hover:bg-brand-primary border-white/10 hover:border-brand-accent transition-all duration-500 group/card">
                     <h4 className="text-2xl font-black mb-8 italic text-brand-accent uppercase tracking-widest">Digital Precision</h4>
                     <ul className="space-y-8">
                        {[
