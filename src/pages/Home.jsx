@@ -29,7 +29,7 @@ export default function Home() {
       <Hero />
       
       {/* Dynamic Trust Bar */}
-      <div className="bg-brand-light py-12 border-y border-brand-primary/5">
+      <div className="bg-brand-light py-6 md:py-12 border-y border-brand-primary/5">
         <LogoCloud />
       </div>
 
@@ -82,7 +82,7 @@ export default function Home() {
                  ))}
               </div>
             </div>
-            <div className="relative">
+            <div className="relative hidden md:block">
                <div className="aspect-square bg-brand-accent rounded-[60px] rotate-3 absolute inset-0 -z-10 opacity-20" />
                <div className="aspect-square rounded-[60px] overflow-hidden shadow-2xl relative border-8 border-white/5">
                   <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2942&auto=format&fit=crop" className="w-full h-full object-cover grayscale" alt="Expert" />
@@ -90,7 +90,7 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="mt-32 pt-32 border-t border-white/5">
+          <div className="mt-16 md:mt-32 pt-16 md:pt-32 border-t border-white/5">
             <Stats />
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function Home() {
       {/* Authority Hub: Tax Intelligence */}
       <SectionWrapper bg="bg-brand-light" id="news">
         <div className="container-custom">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-12">
+          <div className="flex flex-col md:flex-row justify-between md:items-end mb-20 gap-8">
             <div className="max-w-2xl">
               <div className="flex items-center gap-4 mb-6">
                  <div className="w-12 h-0.5 bg-brand-accent" />
@@ -126,7 +126,7 @@ export default function Home() {
             </div>
             <Link 
               to="/news" 
-              className="px-10 py-4 bg-brand-primary text-brand-accent font-black text-[10px] uppercase tracking-widest hover:bg-brand-accent hover:text-brand-primary transition-all rounded-sm"
+              className="w-full md:w-auto text-center px-10 py-4 bg-brand-primary text-brand-accent font-black text-[10px] uppercase tracking-widest hover:bg-brand-accent hover:text-brand-primary transition-all rounded-sm"
             >
               All Updates
             </Link>
@@ -172,15 +172,15 @@ export default function Home() {
       {/* Final CTA Diagnostic */}
       <SectionWrapper id="cta" bg="bg-white">
          <div className="container-custom">
-           <div className="bg-brand-primary p-16 md:p-32 rounded-[60px] text-center relative overflow-hidden group">
+           <div className="bg-brand-primary p-8 sm:p-12 md:p-32 rounded-[40px] md:rounded-[60px] text-center relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accent/5 rounded-full blur-[100px] -mr-48 -mt-48 transition-all duration-1000 group-hover:scale-150" />
               <div className="relative z-10">
-                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[100px] font-black text-white tracking-tighter mb-12 leading-[0.8] uppercase">
+                 <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[100px] font-black text-white tracking-tighter mb-12 leading-[40px] md:leading-[0.8] uppercase">
                     Ready to <br /> <span className="text-brand-accent italic">Scale</span> Safely?
                  </h2>
                  <p className="text-white/60 text-xl font-medium max-w-2xl mx-auto mb-16">Download our 'Tax Mitigation PDF' or book a senior diagnostic audit today.</p>
                  <div className="flex flex-col sm:flex-row justify-center gap-8">
-                    <Button to="/contact" variant="secondary" className="bg-brand-accent text-brand-primary py-6 px-16 text-xl hover:bg-white transition-all">Request Diagnostic</Button>
+                    <Button to="/contact" variant="secondary" className="bg-brand-accent text-brand-primary py-6 px-16 text-[13px] hover:bg-white transition-all">Request Diagnostic</Button>
                  </div>
               </div>
            </div>

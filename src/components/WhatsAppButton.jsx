@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function WhatsAppButton() {
-  const whatsappNumber = "+447000000000"; // Replace with actual number
+  const whatsappNumber = "+923199976414";
   const message = "Hello MFFS, I'd like to book a free consultation.";
 
   return (

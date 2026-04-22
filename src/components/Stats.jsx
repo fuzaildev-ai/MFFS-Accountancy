@@ -49,7 +49,7 @@ export default function Stats() {
   ];
 
   return (
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12">
       {stats.map((stat, idx) => (
         <StatItem key={idx} {...stat} />
       ))}

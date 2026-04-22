@@ -94,7 +94,7 @@ export default function Hero() {
         </div>
 
         {/* Right: Modern High-Trust Visual */}
-        <div className="relative hero-image-reveal">
+        <div className="relative hero-image-reveal hidden md:block">
            <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative">
               <img 
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2788&auto=format&fit=crop" 

@@ -42,6 +42,7 @@ export default function AdminDashboard() {
   const [analytics, setAnalytics] = useState({ traffic: [], leads: [], kpis: { views: 0, leads: 0, conv: '0%' } });
   const [loading, setLoading] = useState(false);
   const [isSlideOpen, setIsSlideOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [editingId, setEditingId] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();
@@ -190,56 +191,76 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex font-sans leading-normal">
+    <div className="min-h-screen bg-slate-50 flex flex-col md:flex-row font-sans leading-normal">
+      {/* Mobile Sidebar Overlay */}
+      {isMobileMenuOpen && (
+         <div className="fixed inset-0 bg-brand-primary/40 backdrop-blur-sm z-40 md:hidden transition-opacity" onClick={() => setIsMobileMenuOpen(false)} />
+      )}
+
       {/* 1. Sidebar - Dark Institutional Suite */}
-      <div className="w-72 bg-[#0E2333] flex flex-col p-8 fixed h-full z-20 overflow-hidden shadow-2xl">
-         <div className="flex items-center gap-3 mb-16 px-6">
-            <div className="w-10 h-10 bg-brand-accent rounded-xl flex items-center justify-center font-black text-brand-primary text-xl shadow-lg shadow-brand-accent/20">M</div>
-            <div className="flex flex-col -gap-1">
-               <span className="text-xl font-black tracking-tighter text-white leading-none uppercase">MFFS<span className="text-brand-accent">.</span></span>
-               <span className="text-[7px] font-black text-slate-500 uppercase tracking-[0.4em]">ADMIN v4.0</span>
+      <div className={`fixed inset-y-0 left-0 w-72 bg-[#0E2333] flex flex-col p-8 z-50 shadow-2xl transform transition-transform duration-300 ease-out md:translate-x-0 ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} overflow-y-auto`}>
+         <div className="flex items-center justify-between mb-16">
+            <div className="flex items-center gap-3">
+               <div className="w-10 h-10 bg-brand-accent rounded-xl flex items-center justify-center font-black text-brand-primary text-xl shadow-lg shadow-brand-accent/20">M</div>
+               <div className="flex flex-col -gap-1">
+                  <span className="text-xl font-black tracking-tighter text-white leading-none uppercase">MFFS<span className="text-brand-accent">.</span></span>
+                  <span className="text-[7px] font-black text-slate-500 uppercase tracking-[0.4em]">ADMIN v4.0</span>
+               </div>
             </div>
+            <button className="md:hidden w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white" onClick={() => setIsMobileMenuOpen(false)}>
+               ✕
+            </button>
          </div>
 
-         <div className="space-y-1 flex-grow">
-            <SidebarItem active={activeTab === 'news'} icon="📰" label="News" onClick={() => setActiveTab('news')} />
-            <SidebarItem active={activeTab === 'cases'} icon="📁" label="Case Study" onClick={() => setActiveTab('cases')} />
-            <SidebarItem active={activeTab === 'testimonials'} icon="💬" label="Testimonials" onClick={() => setActiveTab('testimonials')} />
-            <SidebarItem active={activeTab === 'team'} icon="👥" label="Team Members" onClick={() => setActiveTab('team')} />
-            <div className="pt-8 mb-4 border-b border-white/5 mx-6" />
-            <SidebarItem active={activeTab === 'insights'} icon="📈" label="Insights" onClick={() => setActiveTab('insights')} />
+         <div className="flex flex-col gap-2 flex-grow w-full">
+            <SidebarItem active={activeTab === 'news'} icon="📰" label="News" onClick={() => { setActiveTab('news'); setIsMobileMenuOpen(false); }} />
+            <SidebarItem active={activeTab === 'cases'} icon="📁" label="Case Study" onClick={() => { setActiveTab('cases'); setIsMobileMenuOpen(false); }} />
+            <SidebarItem active={activeTab === 'testimonials'} icon="💬" label="Testimonials" onClick={() => { setActiveTab('testimonials'); setIsMobileMenuOpen(false); }} />
+            <SidebarItem active={activeTab === 'team'} icon="👥" label="Team Members" onClick={() => { setActiveTab('team'); setIsMobileMenuOpen(false); }} />
+            <div className="w-full h-px bg-white/5 my-6 self-center" />
+            <SidebarItem active={activeTab === 'insights'} icon="📈" label="Insights" onClick={() => { setActiveTab('insights'); setIsMobileMenuOpen(false); }} />
          </div>
 
          <button 
            onClick={handleLogout}
-           className="w-full flex items-center gap-4 px-6 py-4 rounded-xl text-slate-500 hover:text-white hover:bg-red-500/10 transition-all text-[10px] font-black uppercase tracking-widest mt-auto border border-transparent"
+           className="w-full flex items-center gap-4 px-6 py-4 rounded-xl text-slate-500 hover:text-white hover:bg-red-500/10 transition-all text-[10px] font-black uppercase tracking-widest mt-8 border border-transparent"
          >
            🚪 Logout
          </button>
       </div>
 
       {/* 2. Main Content */}
-      <div className="flex-grow ml-72">
+      <div className="flex-grow md:ml-72 flex flex-col min-h-screen w-full overflow-hidden">
          {/* Top Bar - Clean Premium */}
-         <div className="bg-white/90 backdrop-blur-md border-b border-slate-100 h-24 flex items-center justify-between px-12 sticky top-0 z-10">
-            <div>
-               <h2 className="text-xl font-black text-brand-primary uppercase tracking-tighter leading-none">
-                  {activeTab === 'insights' ? 'Intelligence Dashboard' : `Managing ${activeTab.replace('_', ' ')}`}
-               </h2>
-               <p className="text-[9px] font-black text-slate-400 uppercase tracking-[0.3em] mt-1">Institutional Connectivity: OK</p>
+         <div className="bg-white/90 backdrop-blur-md border-b border-slate-100 flex-shrink-0 flex items-center justify-between p-4 px-6 md:px-12 md:h-24 sticky top-0 z-10 gap-4">
+            <div className="flex items-center gap-4">
+               <button 
+                 className="md:hidden text-brand-primary w-10 h-10 flex flex-col items-start justify-center gap-1.5" 
+                 onClick={() => setIsMobileMenuOpen(true)}
+               >
+                  <div className="w-6 h-0.5 bg-current" />
+                  <div className="w-4 h-0.5 bg-current" />
+                  <div className="w-6 h-0.5 bg-current" />
+               </button>
+               <div className="truncate">
+                  <h2 className="text-base sm:text-xl font-black text-brand-primary uppercase tracking-tighter leading-none truncate pr-2">
+                     {activeTab === 'insights' ? 'Intelligence' : `Managing ${activeTab.replace('_', ' ')}`}
+                  </h2>
+                  <p className="text-[9px] font-black text-slate-400 uppercase tracking-[0.3em] mt-1 hidden sm:block">Institutional Connectivity: OK</p>
+               </div>
             </div>
             {activeTab !== 'insights' && (
               <button 
                 onClick={() => openSlider()}
-                className="px-8 py-4 bg-brand-primary text-brand-accent font-black uppercase text-[10px] tracking-widest rounded-xl hover:bg-brand-accent hover:text-brand-primary shadow-lg shadow-brand-primary/10 transition-all transform active:scale-95"
+                className="px-4 py-3 md:px-8 md:py-4 bg-brand-primary text-brand-accent font-black uppercase text-[9px] md:text-[10px] tracking-widest rounded-xl hover:bg-brand-accent hover:text-brand-primary shadow-lg shadow-brand-primary/10 transition-all transform active:scale-95 whitespace-nowrap flex-shrink-0"
               >
-                + Register New Entry
+                + <span className="inline">New</span> <span className="hidden sm:inline">Entry</span>
               </button>
             )}
          </div>
 
          {/* Layout Router */}
-         <div className="p-12 max-w-[1600px] mx-auto h-[calc(100vh-6rem)] overflow-y-auto pb-40 scrollbar-hide">
+         <div className="p-6 md:p-12 w-full max-w-[1600px] mx-auto h-auto md:h-[calc(100vh-6rem)] md:overflow-y-auto pb-40 scrollbar-hide flex-grow">
             
             {activeTab === 'insights' ? (
                /* Redesigned Bento Insights */
