@@ -3,7 +3,7 @@ import { supabase } from '../../supabaseClient';
 import { useNavigate } from 'react-router-dom';
 import { 
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  BarChart, Bar, Cell
+  BarChart, Bar
 } from 'recharts';
 
 const SidebarItem = ({ active, icon, label, onClick }) => (
@@ -52,6 +52,7 @@ export default function AdminDashboard() {
   const [testimonyForm, setTestimonyForm] = useState({ name: '', comment: '', company: '', order_index: 0 });
   const [teamForm, setTeamForm] = useState({ name: '', role: '', designations: '', image_url: '', linkedin_url: '', order_index: 0 });
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (activeTab === 'insights') {
       fetchAnalytics();

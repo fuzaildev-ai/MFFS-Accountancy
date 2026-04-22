@@ -28,7 +28,7 @@ export default function VatReturns() {
                  </div>
                  <h2 className="text-4xl md:text-6xl font-black text-brand-primary uppercase mb-8 leading-tight">Mastering <br /><span className="text-brand-accent italic">MTD Strategy.</span></h2>
                  <p className="text-slate-500 text-xl leading-relaxed mb-10">
-                    VAT can be one of the most complex areas of business taxation. With the introduction of Making Tax Digital (MTD), it's more important than ever to have a digital reporting system that satisfies HMRC's rigorous criteria.
+                    VAT can be one of the most complex areas of business taxation. With the introduction of Making Tax Digital (MTD), it&apos;s more important than ever to have a digital reporting system that satisfies HMRC&apos;s rigorous criteria.
                  </p>
                  
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">

@@ -28,7 +28,7 @@ export default function CorporationTax() {
                  </div>
                  <h2 className="text-4xl md:text-6xl font-black text-brand-primary uppercase mb-8 leading-tight">Navigating <br /><span className="text-brand-accent italic">CT600 Policy.</span></h2>
                  <p className="text-slate-500 text-xl leading-relaxed mb-10">
-                    Computing your business's corporation tax liability requires a deep understanding of UK fiscal law. Every Limited Company must file a CT600 and submit statutory accounts to HMRC.
+                    Computing your business&apos;s corporation tax liability requires a deep understanding of UK fiscal law. Every Limited Company must file a CT600 and submit statutory accounts to HMRC.
                  </p>
                  
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -62,7 +62,7 @@ export default function CorporationTax() {
                  </div>
                  <div className="absolute -bottom-10 -left-10 bg-brand-accent p-12 rounded-[50px] shadow-2xl text-brand-primary max-w-xs">
                     <p className="text-[10px] font-black uppercase tracking-widest mb-4 opacity-50">Strategic Fact</p>
-                    <p className="text-xl font-black italic">"We help you transition from simple taxation to strategic capital engineering."</p>
+                    <p className="text-xl font-black italic">&quot;We help you transition from simple taxation to strategic capital engineering.&quot;</p>
                  </div>
               </div>
            </div>
