@@ -26,7 +26,9 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
                {['LinkedIn', 'Twitter', 'Facebook'].map(s => (
-                 <a key={s} href="#" className="w-10 h-10 rounded bg-white/5 flex items-center justify-center hover:bg-brand-accent hover:text-brand-primary transition-all duration-300 text-[10px] font-black uppercase text-center flex items-center justify-center">{s[0]}</a>
+                 <a key={s} href={`https://${s.toLowerCase()}.com`} target="_blank" rel="noreferrer" className="w-10 h-10 rounded bg-white/5 flex items-center justify-center hover:bg-brand-accent hover:text-brand-primary transition-all duration-300 text-[10px] font-black uppercase">
+                   {s[0]}
+                 </a>
                ))}
             </div>
           </div>
