@@ -1,13 +1,19 @@
 import React from 'react';
 
 export default function LogoCloud() {
-  // SVG Placeholders for Corporate Logos
-  const logos = Array(7).fill(0).map((_, i) => (
-    <div key={i} className="flex-shrink-0 w-[250px] flex items-center justify-center px-8 filter grayscale opacity-30 transition-all duration-500 hover:filter-none hover:opacity-100 hover:scale-110">
-       <div className="text-brand-primary font-black text-2xl tracking-tighter uppercase italic flex items-center gap-2">
-          <div className="w-6 h-6 bg-brand-primary rounded-sm" />
-          VENTURE_{i+1}
-       </div>
+  const auditFirms = [
+    { name: "Deloitte", icon: <span className="font-black text-4xl" style={{ color: "#86bc25" }}>Deloitte.</span> },
+    { name: "PwC", icon: <span className="font-black text-4xl" style={{ color: "#e0301e" }}>pwc</span> },
+    { name: "EY", icon: <span className="font-black text-4xl bg-[#ffe600] text-black px-2 py-1 leading-none">EY</span> },
+    { name: "KPMG", icon: <span className="font-black text-4xl" style={{ color: "#00338d" }}>KPMG</span> },
+    { name: "BDO", icon: <span className="font-black text-4xl" style={{ color: "#ed1a3b" }}>BDO</span> },
+    { name: "Grant Thornton", icon: <span className="font-bold text-3xl" style={{ color: "#4a2e8e" }}>Grant Thornton</span> },
+    { name: "RSM", icon: <span className="font-black text-4xl" style={{ color: "#00a3e0" }}>RSM</span> }
+  ];
+
+  const logos = auditFirms.map((firm, i) => (
+    <div key={i} className="flex-shrink-0 w-[250px] flex items-center justify-center px-6 transition-all duration-500 hover:scale-110">
+       {firm.icon}
     </div>
   ));
 
