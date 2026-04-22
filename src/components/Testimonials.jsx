@@ -1,10 +1,9 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const TestimonialCard = ({ name, comment, company, initial }) => (
-  <div className="flex-shrink-0 w-[400px] whitespace-normal bg-brand-light p-10 rounded-[40px] border border-brand-primary/5 mr-8 group hover:bg-brand-primary hover:text-white transition-all duration-500 flex flex-col">
+  <div className="flex-shrink-0 w-[300px] sm:w-[400px] whitespace-normal bg-brand-light p-8 sm:p-10 rounded-[30px] sm:rounded-[40px] border border-brand-primary/5 mr-6 sm:mr-8 group/card hover:bg-brand-primary hover:text-white transition-all duration-500 flex flex-col">
     <div className="flex items-center gap-4 mb-6">
-       <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center font-black text-brand-primary group-hover:bg-brand-accent group-hover:text-brand-primary transition-all">
+       <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center font-black text-brand-primary group-hover/card:bg-brand-accent transition-all">
           {initial}
        </div>
        <div>
@@ -12,7 +11,7 @@ const TestimonialCard = ({ name, comment, company, initial }) => (
           {company && <p className="text-[10px] font-black uppercase tracking-widest text-brand-accent">{company}</p>}
        </div>
     </div>
-    <p className="text-slate-500 group-hover:text-white/70 text-lg leading-relaxed font-medium italic">
+    <p className="text-slate-500 group-hover/card:text-white/70 text-base sm:text-lg leading-relaxed font-medium italic">
       "{comment}"
     </p>
   </div>
@@ -39,17 +38,20 @@ export default function Testimonials() {
          <h2 className="text-4xl md:text-7xl font-black text-brand-primary uppercase leading-tight">Trust <span className="text-brand-accent italic">Engineered.</span></h2>
       </div>
 
-      {/* Marquee Loop */}
-      <div className="flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
-        <motion.div 
-          animate={{ x: [0, -1600] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          className="flex whitespace-nowrap"
-        >
-          {reviews.concat(reviews).map((r, i) => (
-            <TestimonialCard key={i} {...r} />
-          ))}
-        </motion.div>
+      {/* Marquee Loop (Pauses on Hover for Readability) */}
+      <div className="flex w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)] group">
+        <div className="flex w-fit animate-marquee group-hover:[animation-play-state:paused]">
+          <div className="flex">
+            {reviews.map((r, i) => (
+              <TestimonialCard key={i} {...r} />
+            ))}
+          </div>
+          <div className="flex">
+            {reviews.map((r, i) => (
+              <TestimonialCard key={i + 'dup'} {...r} />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
