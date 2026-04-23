@@ -53,7 +53,7 @@ export default function CaseStudies() {
           ) : (
              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                {cases.map((item) => (
-                 <div key={item.id} className="group relative overflow-hidden rounded-3xl bg-brand-primary h-[500px]">
+                  <div key={item.id} className="group relative overflow-hidden rounded-3xl bg-brand-primary h-[450px] md:h-[500px] lg:h-[550px]">
                     <img 
                        src={item.image_url} 
                        alt={item.title} 
@@ -63,9 +63,9 @@ export default function CaseStudies() {
                        <span className="text-[10px] font-black uppercase tracking-widest text-brand-accent mb-4 block">{item.category}</span>
                        <h3 className="text-3xl font-black text-white mb-6 uppercase leading-tight group-hover:text-brand-accent transition-colors">{item.title}</h3>
                        
-                       <div className="flex items-center justify-between border-t border-white/20 pt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0">
+                       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between border-t border-white/20 pt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0 gap-6">
                           <div className="text-white font-bold italic text-sm">{item.result}</div>
-                          <Button to="/contact" variant="outline" className="text-white border-white/30 px-6 py-3 text-xs">View Data</Button>
+                          <Button to="/contact" variant="outline" className="text-white border-white/30 px-6 py-3 text-[10px] whitespace-nowrap">View Data</Button>
                        </div>
                     </div>
                  </div>
